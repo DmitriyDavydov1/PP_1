@@ -15,7 +15,7 @@ def mask_account_card(account_card: str) -> str:
             name_mask.append(i)
         else:
             mask = i
-    if 'Счет' in name_mask or 'Счёт' in name_mask or 'счет' in name_mask or 'счёт' in name_mask:
+    if "Счет" in name_mask or "Счёт" in name_mask or "счет" in name_mask or "счёт" in name_mask:
         mask1 = get_mask_account(mask)
     else:
         mask1 = get_mask_card_number(mask)
