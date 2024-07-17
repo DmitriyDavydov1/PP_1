@@ -22,7 +22,7 @@ processing(
 
 
 def sort_by_date(list_dict: list[dict[str, str | int]], revers_list: bool = False) -> list[dict[str, str | int]]:
-    """Функция сортировки операций по дате"""
+    """Функция сортировки операций по дате в порядке возрастания"""
 
     sort_dict_data = sorted(list_dict, key=lambda dict_i: dict_i["date"], reverse=revers_list)
 
