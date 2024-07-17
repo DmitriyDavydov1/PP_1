@@ -1,4 +1,4 @@
-def processing(list_dict: list[dict[str, Any]], state="EXECUTED") -> list[dict[str, Any]]:
+def processing(list_dict: list[dict[str, str | int]], state="EXECUTED") -> list[dict[str, str | int]]:
     """Функция фильтрации операций по ключу state"""
 
     sort_dict = []
@@ -21,7 +21,7 @@ processing(
 )
 
 
-def sort_by_date(list_dict: list[dict[str, Any]], revers_list: bool=False) -> list[dict[str, Any]]:
+def sort_by_date(list_dict: list[dict[str, str | int]], revers_list: bool = False) -> list[dict[str, str | int]]:
     """Функция сортировки операций по дате"""
 
     sort_dict_data = sorted(list_dict, key=lambda dict_i: dict_i["date"], reverse=revers_list)
