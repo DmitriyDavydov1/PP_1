@@ -1,4 +1,4 @@
-def processing(list_dict: list[dict[str, str | int]], state="EXECUTED") -> list[dict[str, str | int]]:
+def processing(list_dict: list[dict[str, str | int]], state: str = "EXECUTED") -> list[dict[str, str | int]]:
     """Функция фильтрации операций по ключу state"""
 
     sort_dict = []
