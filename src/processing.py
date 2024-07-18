@@ -22,7 +22,7 @@ filter_by_state(
 
 
 def sort_by_date(list_dict: list[dict[str, str | int]], ascending: bool = True) -> list[dict[str, str | int]]:
-    """Функция сортировки операций по дате в порядке возрастания"""
+    """Функция сортировки операций по дате в порядке убывания"""
 
     sort_dict_data = sorted(list_dict, key=lambda dict_i: dict_i["date"], reverse=ascending)
 
