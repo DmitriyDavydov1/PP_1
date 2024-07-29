@@ -10,6 +10,7 @@ def mask_account_rename():
 def mask_card_rename():
     return 'Visa Classic 1234 56** **** 4567'
 
+
 @pytest.fixture
 def sort_by_date_init():
     return [
