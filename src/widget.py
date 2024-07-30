@@ -23,16 +23,11 @@ def mask_account_card(account_card: str) -> str:
     return mask_account
 
 
-mask_account_card("Счет 12345678912345678912")
-mask_account_card("Visa Classic 1234567891234567")
-mask_account_card("Mastercard 9874567891231212")
-
-
 def get_data(data_string: str) -> str:
-    """Функция которая преобразует дату"""
+    """Функция, которая преобразует дату"""
 
-    d = datetime.strptime(data_string, format("%Y-%m-%dT%H:%M:%S.%f"))
-    return d.strftime(format("%d.%m.%Y"))
-
-
-get_data("2018-07-11T02:26:18.671407")
+    if data_string == "":
+        return ""
+    else:
+        d = datetime.strptime(data_string, format("%Y-%m-%dT%H:%M:%S.%f"))
+        return d.strftime(format("%d.%m.%Y"))
