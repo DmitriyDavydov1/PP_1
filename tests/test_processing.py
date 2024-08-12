@@ -5,7 +5,7 @@ from src.processing import filter_by_state, sort_by_date
 
 @pytest.mark.parametrize(
     "list_init, state_init, list_filter",
-    {
+    [
         (
             [
                 {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -34,7 +34,7 @@ from src.processing import filter_by_state, sort_by_date
                 ],
             )
         ),
-    },
+    ],
 )
 def test_sort_by_date_param(list_init, state_init, list_filter):
     assert filter_by_state(list_init, state_init) == list_filter
