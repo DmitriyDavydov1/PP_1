@@ -23,11 +23,8 @@ def mask_account_card(account_card: str) -> str:
     return mask_account
 
 
-def get_data(data_string: str) -> str:
-    """Функция, которая преобразует дату"""
-
-    if data_string == "":
-        return ""
-    else:
-        d = datetime.strptime(data_string, format("%Y-%m-%dT%H:%M:%S.%f"))
-        return d.strftime(format("%d.%m.%Y"))
+def get_date(datetime_str: str) -> str:
+    """Меняет формат даты с datetime на привычный ДД.ММ.ГГГГ"""
+    datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%S.%f")
+    new_format_date = datetime_obj.strftime("%d.%m.%Y")
+    return new_format_date
