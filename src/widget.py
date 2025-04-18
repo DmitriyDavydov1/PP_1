@@ -1,5 +1,3 @@
-from src.masks import get_mask_account
-from src.masks import get_mask_card_number
 from datetime import datetime
 
 
@@ -12,6 +10,13 @@ def mask_account_card(type_and_number: str) -> str:
 
 
 def get_date(datetime_str: str) -> str:
+    """Меняет формат даты с datetime на привычный ДД.ММ.ГГГГ"""
+    datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%S.%f")
+    new_format_date = datetime_obj.strftime("%d.%m.%Y")
+    return new_format_date
+
+
+def get_date2(datetime_str: str) -> str:
     """Меняет формат даты с datetime на привычный ДД.ММ.ГГГГ"""
     datetime_obj = datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
     new_format_date = datetime_obj.strftime("%d.%m.%Y")
