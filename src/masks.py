@@ -2,7 +2,7 @@ import logging
 
 logger = logging.getLogger("masks")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler("../logs/masks.log")
+file_handler = logging.FileHandler("logs/masks.log")
 file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
@@ -29,12 +29,6 @@ def get_mask_card_number(mask_card: str) -> str:
 def get_mask_account(mask_account: str) -> str:
     """Функция принимает на вход номер счета и возвращает его маску. Номер счета замаскирован и отображается
     в формате **XXXX. Т. е. видны только последние 4 цифры."""
-    if mask_account == '':
-        return ''
-    elif len(mask_account) != 20:
-        logger.info(f"У счета с маской {mask_account} нестандартная длина номера счета")
-        return 'Неправильный номер счета'
-    else:
-        mask_account = "**" + mask_account[-4:]
-        logger.info(f"Маска банковского счета: {mask_account}")
-        return mask_account
+    mask_account = f"**{mask_account[-4:]}"
+    logger.info(f"Маска банковского счета: {mask_account}")
+    return mask_account
